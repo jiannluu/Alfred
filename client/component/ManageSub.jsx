@@ -26,6 +26,10 @@ const ManageSub = () => {
     nav('/login')
   }
 
+  const goSettings = () => {
+    nav('/settings')
+  }
+
   return (
     <div className="manage-container">
       <div className="navbar addsub-navbar">
@@ -33,7 +37,10 @@ const ManageSub = () => {
           <img id="nav-logo-img" src="https://freepngimg.com/download/suit/60271-necktie-tuxedo-bow-black-suit-tie.png"></img>
           <p id="nav-logo-word">Alfred</p>
         </div>
-        <button id="nav-logout"onClick={logout}>Log Out</button>
+        <div className='nav-btns'>
+            <button id="nav-logout"onClick={logout}>Log Out</button>
+            <button id="nav-logout" className="nav-setting" onClick={goSettings}>&#9881;</button>
+        </div>
       </div>
       {
         currentDisplay === 'addSub' ? <AddSub onDisplaySwitch={displaySwitcher}/> : <SeeSub onDisplaySwitch={displaySwitcher}/>

@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color: #505c7c;
+    background-image: url('https://i.pinimg.com/originals/a5/de/39/a5de392b257f6c85f23c0a7cc91feb95.gif');
+    background-size: cover;
 }
 
 .App {
@@ -149,8 +150,9 @@ button {
 }
 
 #welcome {
-    font-size: 168px;
+    font-size: 138px;
     color: rgb(218, 218, 218);
+    margin-top: 50px;
 }
 
 .homebody-container {
@@ -166,15 +168,16 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 15px;
-    font-size: 40px;
+    margin-top: 30px;
+    font-size: 30px;
+    color: white;
 }
 
 .manage-btn {
     padding: 15px;
     margin: 0px;
     margin-right: 10px;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .manage-btn:hover {
@@ -283,4 +286,21 @@ button {
 
 .addsub-btn:active {
     background-color: #988829;
+}
+
+.nav-btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-setting {
+    font-size: 40px;
+    padding: 5px 18px;
+}
+
+#settings-container {
+    width: 400px;
+    margin: auto;
+    margin-top: 100px;
 }

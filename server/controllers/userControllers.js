@@ -72,4 +72,28 @@ userControllers.saveUser = (req, res, next) => {
   });
 };
 
+//change password
+userControllers.changePass = (req, res, next) => {
+  const checkUser = `UPDATE Users
+                    SET password=$1
+                    WHERE _id=$2 AND password=$3
+                    RETURNING *`
+  const value = [req.body.newPass, req.body.id, req.body.oldPass]
+  console.log(value)
+  db.query(checkUser, value, (err, response) => {
+    if (err) return next({
+      log: 'Error with changePass - unable to search data in db',
+      status: 400,
+      message: {err: 'Error with changePass'},
+    });
+    console.log(response.rows[0])
+    if(response.rows[0]) {
+      res.locals.changePass = {changePass: 'success'}
+      return next();
+    }
+    res.locals.changePass = {changePass: 'failed'}
+    return next();
+  })
+}
+
 module.exports = userControllers;

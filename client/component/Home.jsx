@@ -1,5 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 const Home = () => {
   const nav = useNavigate()
@@ -37,6 +39,11 @@ const Home = () => {
     nav('/managesub')
   }
 
+  const goSettings = () => {
+    nav('/settings')
+  }
+
+
   return (
     <div className="home-container">
         <div className="navbar">
@@ -44,7 +51,10 @@ const Home = () => {
             <img id="nav-logo-img" src="https://freepngimg.com/download/suit/60271-necktie-tuxedo-bow-black-suit-tie.png"></img>
             <p id="nav-logo-word">Alfred</p>
           </div>
-          <button id="nav-logout"onClick={logout}>Log Out</button>
+          <div className='nav-btns'>
+            <button id="nav-logout"onClick={logout}>Log Out</button>
+            <button id="nav-logout" className="nav-setting" onClick={goSettings}>&#9881;</button>
+          </div>
         </div>
         <div className="homebody-container">
           <p id="welcome">{`${welcome}, ${userName}`}</p>

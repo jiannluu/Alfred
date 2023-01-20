@@ -27,6 +27,10 @@ app.post('/api/addsub', subControllers.addSub, (req, res) => {
   res.status(200).json(res.locals.addSubStat);
 })
 
+app.patch('/api/changepass', userControllers.changePass, (req, res) => {
+  res.status(200).json(res.locals.changePass);
+})
+
 app.use('/api/getsub', apiRouter);
 
 app.use('/api', apiRouter);
